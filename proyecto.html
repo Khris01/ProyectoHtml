@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+        }
+        body{
+           background-image: url("mercadoo.webp");
+           background-repeat: no-repeat;
+            background-size: cover;
+        }
+        div{
+            max-width: 900px;
+            margin: auto;
+            background-color: #333;
+            font-size: 20px;
+            margin-top: 50px;
+        }
+
+        .menu{
+            display: inline;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        .menu  li  a{
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            
+        }
+        .menu > li:hover{
+            background-color: red;
+        }
+            
+        .submenu{
+            position: absolute;
+            display: none;
+            list-style: none;
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .menu li:hover .submenu {
+            display: block;
+        }
+        .menu li:hover{
+        background-color: rgba(0, 0, 0, 0.432);
+        
+        }
+        .menu li a{
+        display: block;
+        color: white;
+        padding: 15px 15px 15px 20px;
+        text-decoration: none;
+        }
+        #textoMostrado {
+            margin-top: 20px;
+            font-size: 14px;
+            background-color: rgba(240, 248, 255, 0.708);
+        }
+        .titulo{
+            padding: 15px 15px 15px 20px;
+            margin-top: 20px;
+            background-color: rgba(226, 127, 74, 0.708);
+            color: rgb(246, 227, 244);
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        <center>
+            <h1 style="display: inline-block; margin-right: 120px;">Veterinaria nogalvet</h1>
+            </center>
+    </div>
+    <div class="menu" >
+        <ul>
+            <li style="display: inline-block;">
+                <a href="#">Frutas</a>
+                <ul class="submenu">
+                    <li><a href="#" data-texto="1">Platano</a></li>
+                    <li><a href="#" data-texto="2">Manzana</a></li>
+                    <li><a href="#" data-texto="3">Naranja</a></li>
+                </ul>
+            </li>
+            <li style="display: inline-block;">
+                <a href="#">Verduras</a>
+                <ul class="submenu">
+                    <li><a href="#" data-texto="4">Lechuga</a></li>
+                    <li><a href="#" data-texto="5">Cebolla</a></li>
+                    <li><a href="#" data-texto="6">Tomate</a></li>
+                </ul>
+            </li>
+            <li style="display: inline-block;">
+                <a href="#">Carnes</a>
+                <ul class="submenu">
+                    <li><a href="#" data-texto="7">Cerdo</a></li>
+                    <li><a href="#" data-texto="8">Res</a></li>
+                    <li><a href="#" data-texto="9">Pollo</a></li>
+                </ul>
+            </li>
+            <li style="display: inline-block;">
+                <a href="#">Cereales</a>
+                <ul class="submenu">
+                    <li><a href="#" data-texto="10">Avena</a></li>
+                    <li><a href="#" data-texto="11">Arroz</a></li>
+                    <li><a href="#" data-texto="12">Trigo</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br><br><br><br>
+    <div id="textoMostrado"></div>
+    <script>
+        const submenus = document.querySelectorAll('.submenu a');
+
+        submenus.forEach(submenu => {
+            submenu.addEventListener('click', e => {
+                e.preventDefault();
+                const texto = e.target.getAttribute('data-texto');
+                switch (texto) {
+                    case "1":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$16.00</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "2":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$21.00</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "3":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$30.20</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "4":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$15.10</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "5":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$23.34</h3><br>
+                            </center>
+                        `;
+                        break;
+                   case "6":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$20.00</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "7":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$54.00</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "8":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$100.00</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "9":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$63.00</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "10":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$24.10</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "11":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$29.00</h3><br>
+                            </center>
+                        `;
+                        break;
+                    case "12":
+                        document.getElementById("textoMostrado").innerHTML=`
+                            <center>
+                            <h2>Precio en un kilo </h2><br>
+                            <h3>$30.50</h3><br>
+                            </center>
+                        `;
+                        break;
+                    default:
+                        break;
+                }
+                
+            });
+        });
+    </script>
